@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Page -->
+    <h1 id="welcomeText">Welcome</h1>
+
+    <!-- Login Form -->
+    <div class="login-container" id="loginForm">
+        <h2>Login</h2>
+        <form id="loginFormElement" action="/login" method="POST" onsubmit="handleLogin(event)">
+            <div class="input-container">
+                <input type="text" id="usernameEmail" name="usernameEmail" placeholder="Username or Email" required>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <!-- Password visibility toggle -->
+                <span id="togglePasswordVisible" class="toggle-icon toggle-icon-visible" onclick="togglePasswordVisibility()">👁️</span>
+                <span id="togglePasswordHidden" class="toggle-icon toggle-icon-hidden" onclick="togglePasswordVisibility()">🙈</span>
+            </div>
+            <button type="submit" id="loginBtn">Login</button>
+            <div id="errorMessage" style="color: red; display: none;">Invalid login credentials, please try again.</div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
